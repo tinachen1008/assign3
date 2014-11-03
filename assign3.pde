@@ -73,12 +73,12 @@ void draw(){
           // -----------------------------------
           break;
     case GAME_WIN:
-          textSize(20);
+          textSize(16);
           fill(0);
           text("YOU WIN !!",width/3,30);
           break;
     case GAME_LOSE:
-          textSize(20);
+          textSize(16);
           fill(0);
           text("YOU LOSE !!",width/3,30);
           break;
