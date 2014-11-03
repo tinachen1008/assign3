@@ -101,8 +101,8 @@ void setBombs(){
   // randomly set bombs
 for (int i=0;i<bombCount;i++){
   int rnd = int(random(16));
-  int a=rnd/4;
-  int b=rnd%4;
+  int a=int(rnd/4);
+  int b=int(rnd%4);
     if(slot[a][b]==SLOT_OFF){
       slot[a][b]=SLOT_BOMB;
    }else{
