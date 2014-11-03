@@ -53,7 +53,7 @@ void draw(){
     case GAME_START:
           background(180);
           image(bg,0,0,640,480);
-          textSize(16);
+          textSize(20);
           fill(0);
           text("Choose # of bombs to continue:",10,width/3-24);
           int spacing = width/9;
@@ -73,12 +73,12 @@ void draw(){
           // -----------------------------------
           break;
     case GAME_WIN:
-          textSize(16);
+          textSize(20);
           fill(0);
           text("YOU WIN !!",width/3,30);
           break;
     case GAME_LOSE:
-          textSize(16);
+          textSize(20);
           fill(0);
           text("YOU LOSE !!",width/3,30);
           break;
