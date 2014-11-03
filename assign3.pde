@@ -67,7 +67,9 @@ void draw(){
           break;
     case GAME_RUN:
           //---------------- put you code here ----
-
+          if(totalSlots-bombCount==clickCount){
+            gameState=GAME_WIN;
+          }
           // -----------------------------------
           break;
     case GAME_WIN:
@@ -182,9 +184,10 @@ void mousePressed(){
        mouseY >= iy && mouseY <= iy+sideLength){
     
     // --------------- put you code here -------     
-  int col=int(( int(mouseX) - ix ) / SLOT_SIZE);
+         int col=int(( int(mouseX) - ix ) / SLOT_SIZE);
          int row =int(( int(mouseY) - iy ) / SLOT_SIZE);
          if(slot[col][row]==SLOT_OFF){
+           clickCount++;
            showSlot(col,row,SLOT_SAFE);
            slot[col][row]=SLOT_SAFE;
          }else{
@@ -197,6 +200,7 @@ void mousePressed(){
          if(totalSlots-bombCount==clickCount){
            gameState=GAME_WIN;
          }
+
     // -------------------------
     
   }
