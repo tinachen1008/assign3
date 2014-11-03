@@ -99,17 +99,18 @@ void setBombs(){
   }
   // -------------- put your code here ---------
   // randomly set bombs
-  for (int i=0;i<bombCount;i++){
+for (int i=0;i<bombCount;i++){
   int rnd = int(random(16));
-    if(slot[rnd/4][rnd%4]==SLOT_OFF){
-      slot[rnd/4][rnd%4]=SLOT_BOMB;
+  int a=rnd/4;
+  int b=rnd%4;
+    if(slot[a][b]==SLOT_OFF){
+      slot[a][b]=SLOT_BOMB;
    }else{
       i--;
-    }
    }
   }
-  // ---------------------------------------
 }
+  // ---------------------------------------
 
 void drawEmptySlots(){
   background(180);
