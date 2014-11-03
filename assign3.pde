@@ -97,7 +97,15 @@ void setBombs(){
   }
   // -------------- put your code here ---------
   // randomly set bombs
-
+  for (int i=0;i<bombCount;i++){
+  int rnd = int(random(16));
+    if(slot[rnd/4][rnd%4]==SLOT_OFF){
+      slot[rnd/4][rnd%4]=SLOT_BOMB;
+   }else{
+      i--;
+    }
+   }
+  }
   // ---------------------------------------
 }
 
@@ -174,7 +182,21 @@ void mousePressed(){
        mouseY >= iy && mouseY <= iy+sideLength){
     
     // --------------- put you code here -------     
-
+  int col=int(( int(mouseX) - ix ) / SLOT_SIZE);
+         int row =int(( int(mouseY) - iy ) / SLOT_SIZE);
+         if(slot[col][row]==SLOT_OFF){
+           showSlot(col,row,SLOT_SAFE);
+           slot[col][row]=SLOT_SAFE;
+         }else{
+           showSlot(col,row,SLOT_BOMB);
+           slot[col][row]=SLOT_BOMB;
+         }
+         if(slot[col][row]==SLOT_BOMB){
+           gameState=GAME_LOSE;
+         }
+         if(totalSlots-bombCount==clickCount){
+           gameState=GAME_WIN;
+         }
     // -------------------------
     
   }
